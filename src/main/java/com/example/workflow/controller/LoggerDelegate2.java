@@ -24,6 +24,11 @@ public class LoggerDelegate2 implements JavaDelegate {
 
         Map<String, Object> variables = delegateExecution.getVariables();
 
+        String sunny = variables.get("sunny").toString();
+        LOGGER.info("weather condition " + sunny);
+
+        variables.put("error", "BPMN Error");
+
         LOGGER.info("\n\n  ... LoggerDelegate2 invoked by "
                 + "activityName2='" + delegateExecution.getCurrentActivityName() + "'"
                 + ", activityId2=" + delegateExecution.getCurrentActivityId()
@@ -33,9 +38,6 @@ public class LoggerDelegate2 implements JavaDelegate {
                 + ", executionId2=" + delegateExecution.getId()
                 + ", variables2=" + delegateExecution.getVariables()
                 + " \n\n");
-
-
-     //   variables.put("print_error", "LoggerDelegate2");
 
         delegateExecution.setVariables(variables);
         throw new BpmnError("print_error");

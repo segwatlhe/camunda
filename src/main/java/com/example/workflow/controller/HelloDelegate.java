@@ -31,11 +31,8 @@ public class HelloDelegate implements JavaDelegate {
 
         Map<String, Object> variables = delegateExecution.getVariables();
 
-        String weatherOk = variables.get("weatherOk").toString();
-        String name = variables.get("name").toString();
-
         variables.put("name", true);
-        variables.put("name2", delegateExecution.getProcessDefinitionId());
+        variables.put("sunny", "sunny");
 
         if (variables.get("weatherOk").equals(true)) {
             variables.put("weatherOk", true);

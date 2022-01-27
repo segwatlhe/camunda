@@ -24,6 +24,9 @@ public class ErrorHandlingDelegate implements JavaDelegate {
 
         Map<String, Object> variables = delegateExecution.getVariables();
 
+        String error = variables.get("error").toString();
+        LOGGER.info("errorHandling " + error)
+        ;
         LOGGER.info("\n\n  ... ErrorHandlingDelegate invoked by "
                 + "activityName='" + delegateExecution.getCurrentActivityName() + "'"
                 + ", activityId=" + delegateExecution.getCurrentActivityId()
